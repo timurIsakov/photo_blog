@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:photo_blog/screens/login_screen.dart';
 import 'package:photo_blog/screens/register_screen.dart';
 import 'package:photo_blog/utils/assets.dart';
 
@@ -56,7 +57,12 @@ class LoggedOutScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: ButtonWidget(
-                    onTap: () {},
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    ),
                     title: 'LOG IN',
                     titleColor: Colors.black,
                     backgroundColor: Colors.white,
