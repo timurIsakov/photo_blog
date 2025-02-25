@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../screens/home_screen.dart';
 import '../screens/logged_out_screen.dart';
 
 class App extends StatelessWidget {
@@ -9,7 +10,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoggedOutScreen(),
+      home: HomeScreen(),
     );
   }
 }
