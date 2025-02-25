@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../screens/history_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/logged_out_screen.dart';
+import '../screens/search_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: SearchScreen(),
     );
   }
 }
