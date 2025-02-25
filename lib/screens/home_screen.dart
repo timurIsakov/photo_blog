@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:photo_blog/screens/history_screen.dart';
 import 'package:photo_blog/utils/assets.dart';
 import 'package:photo_blog/widgets/button_widget.dart';
 import 'package:photo_blog/widgets/user_post_card_widget.dart';
@@ -42,13 +43,20 @@ class HomeScreen extends StatelessWidget {
                       itemExtent: 347,
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
-                      itemBuilder: (context, index) => const Padding(
-                        padding: EdgeInsets.only(right: 16),
-                        child: UserPostCardWidget(
-                          image: Assets.tManImage,
-                          userAvatar: Assets.tGirlAvatar,
-                          userName: 'Anna Finger',
-                          nickName: '@annaFinger',
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: GestureDetector.new(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HistoryScreen(),
+                              )),
+                          child: const UserPostCardWidget(
+                            image: Assets.tManImage,
+                            userAvatar: Assets.tGirlAvatar,
+                            userName: 'Anna Finger',
+                            nickName: '@annaFinger',
+                          ),
                         ),
                       ),
                     ),

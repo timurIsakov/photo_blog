@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../screens/history_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/logged_out_screen.dart';
 
