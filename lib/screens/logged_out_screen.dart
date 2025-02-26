@@ -40,9 +40,9 @@ class LoggedOutScreen extends StatelessWidget {
                         ),
                       ),
                       const UserInfoWidget(
-                        image: Assets.tGirlAvatar,
-                        name: 'Anna Czerwinski',
-                        userName: '@anna_czerwinski',
+                        avatar: Assets.tGirlAvatar,
+                        fullName: 'Anna Czerwinski',
+                        nickName: '@anna_czerwinski',
                       ),
                     ],
                   ),

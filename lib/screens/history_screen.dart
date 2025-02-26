@@ -31,9 +31,9 @@ class HistoryScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const UserInfoWidget(
-                      image: Assets.tGirlAvatar,
-                      name: 'Anna Finger',
-                      userName: '@annaFinger',
+                      avatar: Assets.tGirlAvatar,
+                      fullName: 'Anna Finger',
+                      nickName: '@annaFinger',
                     ),
                     IconButton(
                       onPressed: () => Navigator.of(context).pop(),

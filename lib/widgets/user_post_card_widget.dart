@@ -31,9 +31,9 @@ class UserPostCardWidget extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         UserInfoWidget(
-          image: userAvatar,
-          name: userName,
-          userName: nickName,
+          avatar: userAvatar,
+          fullName: userName,
+          nickName: nickName,
         ),
       ],
     );

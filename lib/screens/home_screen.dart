@@ -4,8 +4,6 @@ import 'package:photo_blog/utils/assets.dart';
 import 'package:photo_blog/widgets/button_widget.dart';
 import 'package:photo_blog/widgets/user_post_card_widget.dart';
 
-import '../widgets/bottom_bar.widget.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -37,29 +35,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  SizedBox(
-                    height: 400,
-                    child: ListView.builder(
-                      itemExtent: 347,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.only(right: 16),
-                        child: GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const HistoryScreen(),
-                              )),
-                          child: const UserPostCardWidget(
-                            image: Assets.tManImage,
-                            userAvatar: Assets.tGirlAvatar,
-                            userName: 'Anna Finger',
-                            nickName: '@annaFinger',
-                          ),
-                        ),
-                      ),
-                    ),
+                  const _PostsViewWidget(
+                    itemCount: 10,
                   ),
                   const SizedBox(height: 35),
                   const Text(
@@ -71,30 +48,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 16),
-                    child: GridView.count(
-                      physics: const ScrollPhysics(
-                        parent: NeverScrollableScrollPhysics(),
-                      ),
-                      shrinkWrap: true,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      crossAxisCount: 2,
-                      children: List.generate(
-                        10,
-                        (index) => Container(
-                          height: 320,
-                          width: 167,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(Assets.tVillaImage),
-                                fit: BoxFit.fill),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  const _CollectionImagesWidget(),
                   Padding(
                     padding:
                         const EdgeInsets.only(top: 24, bottom: 24, right: 16),
@@ -111,7 +65,73 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomBar(),
+    );
+  }
+}
+
+class _PostsViewWidget extends StatelessWidget {
+  final int itemCount;
+  const _PostsViewWidget({
+    super.key,
+    required this.itemCount,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 400,
+      child: ListView.builder(
+        itemExtent: 347,
+        scrollDirection: Axis.horizontal,
+        itemCount: itemCount,
+        itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.only(right: 16),
+          child: GestureDetector(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HistoryScreen(),
+                )),
+            child: const UserPostCardWidget(
+              image: Assets.tManImage,
+              userAvatar: Assets.tGirlAvatar,
+              userName: 'Anna Finger',
+              nickName: '@annaFinger',
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CollectionImagesWidget extends StatelessWidget {
+  const _CollectionImagesWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 16),
+      child: GridView.count(
+        physics: const ScrollPhysics(
+          parent: NeverScrollableScrollPhysics(),
+        ),
+        shrinkWrap: true,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        crossAxisCount: 2,
+        children: List.generate(
+          10,
+          (index) => Container(
+            height: 320,
+            width: 167,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(Assets.tVillaImage), fit: BoxFit.fill),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

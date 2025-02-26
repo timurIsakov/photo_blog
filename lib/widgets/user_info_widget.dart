@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class UserInfoWidget extends StatelessWidget {
-  final String image;
-  final String name;
-  final String userName;
+  final String avatar;
+  final String fullName;
+  final String nickName;
   const UserInfoWidget(
       {super.key,
-      required this.image,
-      required this.name,
-      required this.userName});
+      required this.avatar,
+      required this.fullName,
+      required this.nickName});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class UserInfoWidget extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage(
-                image,
+                avatar,
               ),
               fit: BoxFit.fill,
             ),
@@ -32,7 +32,7 @@ class UserInfoWidget extends StatelessWidget {
         Column(
           children: [
             Text(
-              name,
+              fullName,
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 13,
@@ -41,7 +41,7 @@ class UserInfoWidget extends StatelessWidget {
               ),
             ),
             Text(
-              userName,
+              nickName,
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 13,

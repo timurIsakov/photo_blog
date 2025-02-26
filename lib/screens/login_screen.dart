@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
-
 import '../widgets/button_widget.dart';
 import '../widgets/text_input_widget.dart';
+import 'main_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -34,7 +34,12 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               ButtonWidget(
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainScreen(),
+                  ),
+                ),
                 title: 'LOG IN',
               ),
             ],
