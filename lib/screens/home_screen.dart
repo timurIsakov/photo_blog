@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                       itemCount: 10,
                       itemBuilder: (context, index) => Padding(
                         padding: const EdgeInsets.only(right: 16),
-                        child: GestureDetector.new(
+                        child: GestureDetector(
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
